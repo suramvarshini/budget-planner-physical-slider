@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ESP32 Budget Telemetry Schema",
+  "description": "MQTT Payload sent over TLS to AWS IoT Core topic: budget-planner/device001/telemetry",
+  "type": "object",
+  "required": [
+    "deviceId",
+    "budgetValue",
+    "analogReading",
+    "deviceStatus",
+    "timestamp"
+  ],
+  "properties": {
+    "deviceId": {
+      "type": "string",
+      "example": "SIM-DEVICE-001"
+    },
+    "budgetValue": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 50000,
+      "description": "Calculated budget amount in INR (₹)",
+      "example": 7500.00
+    },
+    "analogReading": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4095,
+      "description": "ESP32 12-bit ADC reading from the potentiometer",
+      "example": 614
+    },
+    "deviceStatus": {
+      "type": "string",
+      "enum": ["ONLINE", "WARNING", "OVER_BUDGET", "SIMULATED"],
+      "example": "ONLINE"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-10-27T14:45:00.000Z"
+    },
+    "telemetry": {
+      "type": "object",
+      "properties": {
+        "greenLed": { "type": "boolean", "example": true },
+        "redLed": { "type": "boolean", "example": false },
+        "firmwareVersion": { "type": "string", "example": "v1.0.0" }
+      }
+    }
+  }
+}

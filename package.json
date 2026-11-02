@@ -1,0 +1,25 @@
+{
+  "name": "budget-planner-physical-slider",
+  "version": "1.0.0",
+  "description": "Smart Budget Monitoring and Simulation System with Potentiometer Slider, Dual LED, and OLED Emulation",
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test": "cd backend && npm test && cd ../frontend && npm test",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "budget-planner",
+    "physical-slider",
+    "iot-simulation",
+    "esp32",
+    "oled-display",
+    "react",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+{
+  "TableName": "BudgetPlannerTelemetry",
+  "KeySchema": [
+    {
+      "AttributeName": "deviceId",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "timestamp",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "deviceId",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "timestamp",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "TimeToLiveSpecification": {
+    "AttributeName": "ttl",
+    "Enabled": true
+  },
+  "Tags": [
+    { "Key": "Project", "Value": "BudgetPlannerPhysicalSlider" },
+    { "Key": "Environment", "Value": "Production" }
+  ]
+}

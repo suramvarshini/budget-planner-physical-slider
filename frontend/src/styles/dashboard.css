@@ -1,0 +1,160 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.hardware-preview-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hw-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hw-subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hw-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .hw-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hw-leds-panel {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hw-leds-panel h4 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.leds-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status-summary-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.status-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.status-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.status-badge.status-good {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--green);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+.status-badge.status-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--yellow);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+.status-badge.status-critical {
+  background: rgba(249, 115, 22, 0.2);
+  color: var(--orange);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+.status-badge.status-exceeded {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  border: 1px solid var(--red);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-card h3 {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.chart-wrapper {
+  height: 260px;
+  position: relative;
+}
+
+.chart-card-wide {
+  grid-column: 1 / -1;
+}
+
+.chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.quick-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}

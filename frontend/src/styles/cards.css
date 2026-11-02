@@ -1,0 +1,83 @@
+.summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.card-icon {
+  color: var(--text-muted);
+}
+
+.card-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Card color indicators */
+.card-blue { border-top: 3px solid #3b82f6; }
+.card-orange { border-top: 3px solid var(--orange); }
+.card-green { border-top: 3px solid var(--green); }
+.card-red { border-top: 3px solid var(--red); }
+
+.status-good { border-top: 3px solid var(--green); }
+.status-warning { border-top: 3px solid var(--yellow); }
+.status-critical { border-top: 3px solid var(--orange); }
+.status-exceeded { border-top: 3px solid var(--red); }
+
+/* Skeleton animation */
+.skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #293854 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-value {
+  height: 32px;
+  width: 140px;
+}
+
+.skeleton-subtitle {
+  height: 16px;
+  width: 90px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
