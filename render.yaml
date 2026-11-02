@@ -1,0 +1,21 @@
+# Render Blueprint – deploys the app as a single Web Service
+# https://docs.render.com/infrastructure-as-code
+
+services:
+  - type: web
+    name: budget-planner-physical-slider
+    runtime: node
+    plan: free
+    buildCommand: chmod +x render-build.sh && ./render-build.sh
+    startCommand: node backend/src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SIMULATION_MODE
+        value: "true"
+      - key: DEFAULT_BUDGET
+        value: "5000"
+      - key: MAX_BUDGET
+        value: "50000"
+      - key: DB_PATH
+        value: ./backend/database/budget_planner.db

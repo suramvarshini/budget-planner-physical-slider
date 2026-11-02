@@ -1,5 +1,6 @@
 require('dotenv').config({ path: require('path').join(__dirname, '../../.env') });
 
+const path      = require('path');
 const express   = require('express');
 const cors      = require('cors');
 const config    = require('./config');
@@ -39,7 +40,18 @@ app.use('/api/history',   historyRouter);
 app.use('/api/reports',   reportsRouter);
 app.use('/api/products',  productsRouter);
 
-app.use(notFound);
+// --- Serve frontend in production ---
+const frontendDist = path.join(__dirname, '../../frontend/dist');
+if (config.NODE_ENV === 'production') {
+  app.use(express.static(frontendDist));
+  // All non-API routes serve the React app (SPA client-side routing)
+  app.get(/^\/(?!api).*/, (_req, res) => {
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+} else {
+  app.use(notFound);
+}
+
 app.use(errorHandler);
 
 const PORT = config.PORT;

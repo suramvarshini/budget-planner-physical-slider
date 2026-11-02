@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Smart Budget Monitoring and Simulation System with Potentiometer Slider, Dual LED, and OLED Emulation",
   "scripts": {
+    "start": "node backend/src/server.js",
+    "build": "cd frontend && npm ci && npm run build",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm run dev",
     "seed": "cd backend && npm run seed",
     "test:backend": "cd backend && npm test",
     "test:frontend": "cd frontend && npm test",
     "test": "cd backend && npm test && cd ../frontend && npm test",
-    "build:frontend": "cd frontend && npm run build"
+    "build:frontend": "cd frontend && npm run build",
+    "render-build": "chmod +x render-build.sh && ./render-build.sh"
   },
   "keywords": [
     "budget-planner",
