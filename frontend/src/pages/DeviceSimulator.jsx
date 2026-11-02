@@ -74,7 +74,7 @@ export default function DeviceSimulator({ currentMonth, onRefresh }) {
           }).catch(() => {});
           return next;
         });
-      }, 1000);
+      }, 2000);
     } else {
       if (autoSimInterval.current) clearInterval(autoSimInterval.current);
     }
