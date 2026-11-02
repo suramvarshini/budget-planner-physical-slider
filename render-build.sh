@@ -9,9 +9,9 @@ cd backend
 npm ci --omit=dev
 cd ..
 
-echo "=== Installing frontend dependencies ==="
+echo "=== Installing frontend dependencies (including dev for vite) ==="
 cd frontend
-npm ci
+npm ci --include=dev
 echo "=== Building frontend ==="
 npm run build
 cd ..
